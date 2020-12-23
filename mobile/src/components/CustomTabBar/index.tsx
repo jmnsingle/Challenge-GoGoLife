@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { MaterialIcons } from '@expo/vector-icons';
+import { getBottomSpace } from 'react-native-iphone-x-helper';
 
 import api from '../../services/api';
 
@@ -44,7 +45,7 @@ const CustomTabBar: React.FC = ({ navigation }: any) => {
   );
 
   return (
-    <Container>
+    <Container style={{ paddingBottom: getBottomSpace() - 5 }}>
       {pages.map(({ title, icon, url }) => (
         <Button
           key={title}

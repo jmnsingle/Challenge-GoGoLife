@@ -1,5 +1,6 @@
 import { useFocusEffect, useRoute } from '@react-navigation/native';
 import React, { useState } from 'react';
+import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 
 import Content from '../../components/Content';
 import NoResults from '../../components/NoResults';
@@ -43,7 +44,7 @@ const Camera: React.FC = () => {
   }
 
   return (
-    <Container>
+    <Container style={{ paddingTop: getStatusBarHeight() + 10 }}>
       {posts.map(post => (
         <Content
           key={post.pageTitle}
